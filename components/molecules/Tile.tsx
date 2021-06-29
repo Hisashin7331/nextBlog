@@ -18,7 +18,7 @@ const Tile: React.FC<TileProps> = ({
 
     return (
         <Link href={`/post/${slug}`}>
-            <a className='flex flex-col w-full h-auto font-sans'>
+            <a className='p-4 lg:p-0 flex flex-col w-full h-auto font-sans'>
                 <div className='relative w-full aspect-w-16 aspect-h-9'>
                     <Image
                         src={image}
