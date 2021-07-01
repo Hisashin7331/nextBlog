@@ -19,13 +19,13 @@ interface Post {
     slug: string
 }
 
-const Home: React.FunctionComponent<AppProps> = ({ result }) => {
+const Home: React.FunctionComponent<AppProps> = ({ posts }) => {
     const howMuchToLoad: number = 6
     const [limit, setLimit] = useState(5)
 
     return (
         <div className='grid md:grid-cols-2 lg:grid-cols-3 md:gap-4'>
-            {result
+            {posts
                 .slice(0, limit)
                 .map((post: Post, index: number) => (
                     <Fragment key={post.id}>
@@ -70,7 +70,7 @@ export const getStaticProps: GetStaticProps = async context => {
 
     return {
         props: {
-            result: data?.posts,
+            posts: data?.posts,
         },
     }
 }
