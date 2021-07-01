@@ -37,10 +37,9 @@ const Home: React.FunctionComponent<AppProps> = ({ posts }) => {
                         />
                         {index === limit - 1 && (
                             <Waypoint
-                                onEnter={() => {
+                                onEnter={() =>
                                     setLimit(limit + howMuchToLoad)
-                                    console.log(limit)
-                                }}
+                                }
                             />
                         )}
                     </Fragment>

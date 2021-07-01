@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 import Search from 'public/assets/icons/search.svg'
 
@@ -8,14 +9,15 @@ interface Props {
 }
 
 const SearchInput: React.FC<Props> = ({ value, setValue }) => {
+    const router = useRouter()
+
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault()
-        return console.log('click')
+        router.push(`/search/${value}`)
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value)
-        console.log(value)
     }
 
     return (
