@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import Hamburger from 'hamburger-react'
@@ -10,6 +10,11 @@ import back from 'public/assets/icons/arrow_back.svg'
 const Navbar: React.FC = () => {
     const router = useRouter()
     const [isOpen, setOpen] = useState(false)
+
+    useEffect(() => {
+        setOpen(false)
+    }, [router.pathname])
+
     return (
         <div className='sticky z-30 top-0 bg-white w-full box-border p-5 text-white text-2xl font-sans font-bold w-full flex justify-between flex-row-reverse'>
             <span className='z-50'>
