@@ -20,10 +20,6 @@ const Menu: React.FC<MenuProps> = ({ isOpen }) => {
             text: 'Home',
         },
         {
-            href: '/search',
-            text: 'Search',
-        },
-        {
             href: '/authors',
             text: 'Authors',
         },
